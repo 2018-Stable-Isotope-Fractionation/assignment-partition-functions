@@ -1,0 +1,154 @@
+---
+title: "Calculate equilibrium isotope effect"
+date: "`r format(Sys.Date(), '%d %b %Y')`"
+output:
+  html_document: 
+    df_print: paged
+    toc: yes
+    toc_float: true
+    code_folding: show
+editor_options:
+  chunk_output_type: inline
+---
+
+```{r "setup", warning=FALSE, message=FALSE}
+library(tidyverse)
+library(latex2exp)
+```
+
+# Define physical constants
+
+```{r}
+h <- 6.6261 * 10^(-27)  # cm2 g s-1 planck constant
+k <- 1.3807 * 10^(-16)  # cm2 g s-2 K-1 boltzman constant
+
+# NOTE: not using c as the speed of light variable here (sol instead) 
+# because of the special meaning of c() in R
+sol <- 2.99 * 10^10       # cm s-1 speed of light
+```
+
+# Helper functions to calculate partition function ratios
+
+```{r}
+source(file.path("libs", "calc_m_ratio.R"))
+source(file.path("libs", "calc_vib_freq_ratio.R"))
+source(file.path("libs", "calc_U.R"))
+source(file.path("libs", "calc_low_T_term_ratio.R"))
+source(file.path("libs", "calc_high_T_term_ratio.R"))
+```
+
+# CO2 <-> Water equilibrium
+
+We are looking at the reaction:
+
+$$
+\frac{1}{2}\cdot C^{16}O_2 + 1\cdot H_2^{18}O \leftrightarrow \frac{1}{2}\cdot C^{18}O_2 + 1\cdot H_2^{16}O
+$$
+
+For this reaction, the fractionation factor is:
+
+$$
+\alpha_{CO_2/H_2O} = K_{eq} = \frac{\left(Q^* / Q\right)^{1/2}_{CO_2}}{\left(Q^* / Q\right)_{H_2O}}
+$$
+
+Overall partition function ratios for each compound:
+
+$$
+\begin{align}
+\frac{Q^*}{Q} &= \left( \frac{m^*}{m} \right)^{3n/2} 
+\frac{\sigma}{\sigma^*} 
+\prod_i \frac{\nu^*_i}{\nu_i} 
+  \frac{e^{-U^*_i /2}}{e^{-U_i /2}} 
+  \frac{1 - e^{-U_i}}{1 - e^{-U_i^*}} \\
+\text{with:} \, 
+  U &= \frac{h \nu}{kT} = \frac{h c \omega}{kT}
+\end{align}
+$$
+
+
+
+# Wave numbers and isotopes
+
+Import the wave numbers from the wave_numbers.xlsx file. Import the isotopes from the system.xlsx file.
+
+```{r}
+# wave numbers
+
+```
+
+```{r}
+# isotopes
+
+```
+
+```{r}
+# combination (store in compounds variable)
+
+```
+
+
+# Temperatures to probe
+
+Define which temperatures we want to look at 
+
+```{r}
+# define temperature range
+
+```
+
+# System
+
+```{r}
+# put together whole system
+
+```
+
+## Calculations
+
+# Components of the partition function ratio
+
+```{r}
+# calculate all the different components of the partition function ratios (QR)
+# QR_m, QR_symmetry, QR_vib, QR_low_T, QR_high_T
+
+```
+
+# Plot the components
+
+```{r, fig.width=10, fig.height=8}
+
+```
+
+
+# Total partition function ratio
+
+Remember:
+
+$$
+\frac{Q^*}{Q} = \left( \frac{m^*}{m} \right)^{3n/2} 
+\frac{\sigma}{\sigma^*} 
+\prod_i \frac{\nu^*_i}{\nu_i} 
+  \frac{e^{-U^*_i /2}}{e^{-U_i /2}} 
+  \frac{1 - e^{-U_i}}{1 - e^{-U_i^*}}
+$$
+
+
+```{r}
+# calculate the total from the parts
+
+```
+
+
+# Actual fractionation factors
+
+
+```{r}
+# calculate the fractionation factors
+```
+
+# Plotting the fractionation factor
+
+```{r}
+
+```
+
