@@ -33,12 +33,12 @@ vignettes/*.pdf
 *.utf8.md
 *.knit.md
 .Rproj.user
+~$*
 
 # output files
 *.html
 *.pdf
 *.docx
-~$*
 
 # solutions
-*solutions.Rmd
+*solutions.R*
