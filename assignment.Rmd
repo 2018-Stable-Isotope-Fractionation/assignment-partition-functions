@@ -19,12 +19,12 @@ library(latex2exp)
 # Define physical constants
 
 ```{r}
-h <- 6.6261 * 10^(-27)  # cm2 g s-1 planck constant
-k <- 1.3807 * 10^(-16)  # cm2 g s-2 K-1 boltzman constant
+h <- 6.6261 * 10 ^ (-27)  # cm2 g s-1 planck constant
+k <- 1.3807 * 10 ^ (-16)  # cm2 g s-2 K-1 boltzman constant
 
 # NOTE: not using c as the speed of light variable here (sol instead) 
 # because of the special meaning of c() in R
-sol <- 2.99 * 10^10       # cm s-1 speed of light
+sol <- 2.99 * 10 ^ 10       # cm s-1 speed of light
 ```
 
 # Helper functions to calculate partition function ratios
