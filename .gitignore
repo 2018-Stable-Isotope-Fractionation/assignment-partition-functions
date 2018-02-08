@@ -39,6 +39,7 @@ vignettes/*.pdf
 *.html
 *.pdf
 *.docx
+output*
 
 # solutions
 *solutions.R*
