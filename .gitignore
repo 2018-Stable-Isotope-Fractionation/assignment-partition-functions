@@ -41,5 +41,8 @@ vignettes/*.pdf
 *.docx
 output*
 
-# solutions
-*solutions.R*
+# include documentation
+!/docs/*
+
+# always exclude any solutions files or folders
+*solution*

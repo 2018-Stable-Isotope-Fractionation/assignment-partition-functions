@@ -10,7 +10,7 @@
 
 
 
-<meta name="date" content="2018-02-06" />
+<meta name="date" content="2018-03-19" />
 
 <title>Calculate equilibrium isotope effect</title>
 
@@ -236,21 +236,22 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Calculate equilibrium isotope effect</h1>
-<h4 class="date"><em>06 Feb 2018</em></h4>
+<h4 class="date"><em>19 Mar 2018</em></h4>
 
 </div>
 
 
 <pre class="r"><code>library(tidyverse)
-library(latex2exp)</code></pre>
+library(latex2exp)
+knitr::opts_chunk$set(eval = FALSE)</code></pre>
 <div id="define-physical-constants" class="section level1">
 <h1>Define physical constants</h1>
-<pre class="r"><code>h &lt;- 6.6261 * 10^(-27)  # cm2 g s-1 planck constant
-k &lt;- 1.3807 * 10^(-16)  # cm2 g s-2 K-1 boltzman constant
+<pre class="r"><code>h &lt;- 6.6261 * 10 ^ (-27)  # cm2 g s-1 planck constant
+k &lt;- 1.3807 * 10 ^ (-16)  # cm2 g s-2 K-1 boltzman constant
 
 # NOTE: not using c as the speed of light variable here (sol instead) 
 # because of the special meaning of c() in R
-sol &lt;- 2.99 * 10^10       # cm s-1 speed of light</code></pre>
+sol &lt;- 2.99 * 10 ^ 10       # cm s-1 speed of light</code></pre>
 </div>
 <div id="helper-functions-to-calculate-partition-function-ratios" class="section level1">
 <h1>Helper functions to calculate partition function ratios</h1>
